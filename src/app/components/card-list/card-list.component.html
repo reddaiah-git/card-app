@@ -1,0 +1,32 @@
+<div class="add-controls">
+  <mat-form-field appearance="outline">
+    <input matInput placeholder="Title" [formControl]="title" />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <input matInput placeholder="Description" [formControl]="desc" />
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="addCard()">Add</button>
+</div>
+
+<div class="card-grid">
+  <ng-container *ngIf="cards$ | async as cards">
+    <mat-card *ngFor="let c of cards"
+    class="card">
+      <mat-card-header>
+        <mat-card-title>{{ c.title }}</mat-card-title>
+        <mat-card-subtitle>ID: {{ c.id }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ c.description }}</p>
+      </mat-card-content>
+      <mat-card-actions style="gap: 8px;">
+        <button mat-icon-button class="edit-button" (click)="openEdit(c)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button class="delete-button" color="warn" (click)="deleteCard(c.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </ng-container>
+</div>

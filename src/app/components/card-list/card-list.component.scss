@@ -1,0 +1,104 @@
+.add-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+  
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+mat-card-title {
+  font-family: Roboto;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+mat-form-field {
+ background-color: transparent; 
+ color: white;
+ width: 30vw;
+}
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa; /* Lighter background */
+  color: #343a40; /* Darker text for readability */
+  font-family: 'Roboto', sans-serif;
+  padding: 16px;
+  margin-bottom: 16px; /* Added margin-bottom */
+
+  /* Default for Extra Large screens (>= 993px) */
+  width: 300px;
+  height: auto; /* Changed to auto */
+
+  @media (max-width: 992px) { /* Large screens */
+    width: 280px;
+    height: auto; /* Changed to auto */
+  }
+
+  @media (max-width: 768px) { /* Medium screens */
+    width: 250px;
+    height: auto; /* Changed to auto */
+  }
+
+  @media (max-width: 576px) { /* Small screens */
+    width: 100%; /* Full width on small screens */
+    height: auto; /* Auto height to fit content */
+    padding: 12px;
+
+    mat-card-title {
+      font-size: 1.1em;
+    }
+
+    mat-card-subtitle {
+      font-size: 0.8em;
+    }
+
+    mat-card-content p {
+      font-size: 0.9em;
+    }
+
+    mat-card-actions {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Base for XL */
+  gap: 14px;
+
+  @media (max-width: 992px) { /* Large screens */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  @media (max-width: 768px) { /* Medium screens */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  @media (max-width: 576px) { /* Small screens */
+    grid-template-columns: 1fr;
+  }
+}
+
+button {
+  border-radius: 10px;
+}
+
+.edit-button {
+  background-color: #ADD8E6; /* Light Blue */
+}
+
+.delete-button {
+  background-color: #FFB6C1; /* Light Red */
+}
+
+.bg-primary {
+  background-color: #007bff; /* Example primary color */
+  color: white;
+}
